@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<!--Main layout-->
+<main class="mt-1 pt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4 mb-4">
+                <h1 class="text-center">{{ object.nama_produk }}</h1>
+            </div>
+        </div>
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+                <img src="{{ object.gambar.url }}" class="img-fluid" alt="" />
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4" >
+                <!--Content-->
+                <div class="p-4">
+                    <div class="mb-3">
+                        <a href="">
+                            <span class="badge bg-dark me-1">{{ object.get_kategori_display }}</span>
+                        </a>
+                        {% if object.label == 'NEW' %}
+                        <a href="">
+                            <span class="badge bg-{{ object.get_label_display }} me-1">New</span>
+                        </a>
+                        {% elif object.label == 'SALE' %}
+                        <a href="">
+                            <span class="badge bg-{{ object.get_label_display }} me-1">Sale</span>
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <span class="badge bg-{{ object.get_label_display }} me-1">Bestseller</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                
+                    
+                    
+
+
+                    <p></p>
+
+                    
+
+                    
+
+                    <p class="lead">
+                        {% if object.harga_diskon %}
+                        <span class="me-1">
+                            <del style="color:rgba(252, 0, 0, 0.658);">${{ object.harga }}</del>
+                        </span>
+                        <span>${{ object.harga_diskon }}</span>
+                        {% else %}
+                        <span>${{ object.harga }}</span>
+                        {% endif %}
+                    </p>
+
+                    <strong><p style="font-size: 20px;">Deskripsi</p></strong>
+
+                    <p style="text-align: justify;">{{ object.deskripsi }}</p>
+                    <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary ms-4" style="background-color: #6487bc;;">
+                        Tambah ke keranjang
+                        <i class="fas fa-shopping-cart ms-1"></i>
+                    </a>
+                    <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger ms-3" style="background-color: #dc5e73;">
+                        Kurangi keranjang
+                        <i class="fas fa-shopping-cart ms-4"></i>
+                    </a>
+                    <div>
+                    <p> </p>
+                    
+                    </div>
+                    <hr/>
+                    <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-6 mb-2">
+                    <strong><span><h6>Reviews</h6></span></strong>
+                    <span>
+                        <div class="d-flex flex-row">
+                            <div class="text-warning mb-1 me-2">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fas fa-star-half-alt"></i>
+                              <span class="ms-1" style="color: rgb(83, 83, 83);">
+                                (96)
+                              </span>
+                            </div>
+                        </div>
+                    </span>
+                    </div>
+                    
+                    <!--Grid column-->
+            <div class="col-md-6 mb-1">
+                    <strong><h6>Rating</h6></strong>
+                    <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <span class="ms-1" style="color: rgb(83, 83, 83);">
+                            (84)
+                          </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fas fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <span class="ms-1" style="color: rgb(83, 83, 83);">
+                            (9)
+                          </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <i class="fas fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <span class="ms-1" style="color: rgb(83, 83, 83);">
+                            (2)
+                          </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <i class="fa fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <i class="fas fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <span class="ms-1" style="color: rgb(83, 83, 83);">
+                            (1)
+                          </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <i class="fa fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <i class="fa fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <i class="fas fa-star" style="color: rgb(212, 212, 250);"></i>
+                          <span class="ms-1" style="color: rgb(83, 83, 83);">
+                               (0)
+                          </span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <hr/>
+            <div>
+                <div class="text-warning mb-1 me-2">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a class="btn btn-full" class="center" href="">Tulis Ulasan</a>
+                    </div>
+                
+                
+                <p></p>
+                </div>
+            </div>
+
+                </div>
+                <!--Content-->
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+        <hr />
+
+        
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+                <h5 class="my-4 h4">Material</h5>
+                <p style="text-align: justify;">{{ object.material }}</p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+                <h5 class="my-4 h4">Overview</h5>
+                <p style="text-align: justify;">{{ object.overview }}</p>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+                </div>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <img src="{{ object.gambar1.url }}" class="center" style="max-width: 50%; float: right;" />
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <img src="{{ object.gambar2.url }}" class="center" style="max-width: 50%; display: block; margin-left: auto; margin-right: auto;" alt="" />
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <img src="{{ object.gambar3.url }}" class="w-50" style="max-width: 80%;" alt="" />
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+</main>
+<!--Main layout-->
+{% endblock content%}

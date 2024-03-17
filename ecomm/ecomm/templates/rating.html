@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Main layout-->
+<main class="mt-5">
+    <div class="container">
+        <!-- Heading -->
+        <h1 class="my-4 text-center" style="-webkit-text-fill-color: rgba(57, 55, 55, 0.808)">How did we do?</h1>
+        <link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="j-rating.css" >
+<div id="rating"></div>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="j-rating.js"></script>
+$("#rating").jRating();
+$("#rating").jRating({
+
+    // number of stars
+    stars: 5,
+  
+    // size of stars
+    size: false,
+  
+    // default color
+    buttons_color: false,
+  
+    // active color
+    active_color: false,
+  
+    // shows text next to the rating control
+    text: false
+    
+  });
+
+        
+
+
+{% endblock content %}

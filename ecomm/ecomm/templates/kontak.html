@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+<!--Main layout-->
+<main class="mt-2">
+    <div class="container">
+        <!-- Heading -->
+        <h1 class="my-4 text-center" style="-webkit-text-fill-color: #905e8e">Contact</h1>
+
+        <form method="POST" name="formCheckout">
+            {% csrf_token %}
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+                    <!--Card-->
+                    <div class="card p-4">
+                        <!--Grid row-->
+                        <h3 class="my-3 text-align" style="-webkit-text-fill-color: #905e8e">Contact Info</h3>
+                        <hr/>
+                        
+                        
+                        <P>Our customer service hours are Monday through Friday, 9am to 6pm</P>
+                        <P class="text-justify">We can help answer any questions about our products, shipping, returns, size guides, drop dates, or anything else on your mind!</P>
+                        <p ></p>
+                        <H6>Live Chat</H6>
+                        <p >Need help? Feel free to contact us via live chat every day of the week</p>
+                        <p ></p>
+
+                        <h6>Text Us</h6>
+                        <p >Phone: (62) 821 3964 6459</p>
+                        <p ></p>
+                        
+                        <h6>Email Us</h6>
+                        <p>Please contact us from the form beside and allow 1-2 bussines day for your response</p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Grid column-->
+                
+                
+                <!--Grid column-->
+                <div class="col-md-6 mb-2">
+                    <!--Card-->
+                    <div class="card p-4">
+                        <!--Grid row-->
+                        <h3 class="my-3 text-align" style="-webkit-text-fill-color: #905e8e">Email Form</h3>
+                        <hr/>
+                        <p type="text-justify">We want to hear from you. Please feel free to email ecommerce@gmail.com, or just speak your mind besides. Please allow 1 business day to respond.</p>
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        
+                        <!-- Text input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form7Example1" class="form-control" />
+                            <label class="form-label" for="form7Example1">Name</label>
+                        </div>
+
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form7Example5" class="form-control" />
+                            <label class="form-label" for="form7Example5">Email</label>
+                        </div>
+
+                        <!-- Text input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form7Example1" class="form-control" />
+                            <label class="form-label" for="form7Example1">Subject</label>
+                        </div>
+
+                        <!-- Message input -->
+                        <div class="form-outline mb-4">
+                            <textarea class="form-control" id="form7Example7" rows="4"></textarea>
+                            <label class="form-label" for="form7Example7">Additional information</label>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" href="{% url 'toko:kontak' %}" style="background-color: #82a2d2;">Submit</button>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </form>
+    </div>
+</main>
+<!--Main layout-->
+{% endblock content %}
